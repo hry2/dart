@@ -1,4 +1,7 @@
-/* Un programme principal saisit une chaîne d'ADN valide et une séquence d'ADN valide (valide signifie qu'elles ne sont pas vides
+/* Je boss toujours la dessus !
+
+
+Un programme principal saisit une chaîne d'ADN valide et une séquence d'ADN valide (valide signifie qu'elles ne sont pas vides
  et sont formées exclusivement d'une combinaison arbitraire de "a", "t", "g" ou "c").
 
 Écrire une fonction valide qui renvoie vrai si la saisie est valide, faux sinon.
