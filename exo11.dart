@@ -17,6 +17,8 @@ chaîne : attgcaatggtggtacatg
 séquence : ca
 Il y a 10.53 % de "ca" dans votre chaîne. */
 
+import 'dart:io';
+
 bool valide(String sequenceEntre) {
   if (sequenceEntre.toLowerCase().contains('a') ||
       sequenceEntre.toLowerCase().contains('t') ||
@@ -38,15 +40,55 @@ double saisie(String chaine, String sequence) {
     for (int i = biginningOfCurrentSequence; i <= sequence.length; i++) {
       currentSequence += chaine[i];
     }
-    if (currentSequence == sequence) {match++;}
-    biginningOfCurrentSequence  ++;
-    if (biginningOfCurrentSequence == chaine.length) {finDeLaChaine = true;}
+    if (currentSequence == sequence) {
+      match++;
+    }
+    biginningOfCurrentSequence++;
+    if (biginningOfCurrentSequence == chaine.length) {
+      finDeLaChaine = true;
+    }
     //return proportionDeLaSequenceDansLaChaine;
   }
-  double proportionDeLaSequenceDansLaChaine = (match*sequence.length*100/chaine.length);
-  return proportionDeLaSequenceDansLaChaine ;
+  double proportionDeLaSequenceDansLaChaine =
+      (match * sequence.length * 100 / chaine.length);
+  return proportionDeLaSequenceDansLaChaine;
 }
 
 void main() {
 //récpérer la chaine et la séquence à comparer
+  // ignore: unused_local_variable
+  bool endOfChannel = false;
+  // ignore: unused_local_variable
+  bool endOfSequence = false;
+  String channel = '';
+  String sequence = '';
+  String userEntry = '';
+  print(
+      'Entrer successivement les lettres qui constitueront la chaine (uniquement a,t,g ou c). Entrer O ou o pour terminer');
+  while (endOfChannel == false) {
+    userEntry = stdin.readLineSync()!;
+    
+    if (userEntry.toLowerCase() == 'o') {
+      endOfChannel = true;
+    } else if (valide(userEntry) == true) {
+      channel += userEntry;
+    } else
+      print('Entrée invalide. Elle ne sera pas prise en compte');
+  }
+
+  userEntry = '';
+  print(
+      'Entrer successivement les lettres qui constitueront la sequence(uniquement a,t,g ou c). Entrer O ou o pour terminer');
+  while (endOfSequence == false) {
+    userEntry = stdin.readLineSync()!;
+    if (userEntry.toLowerCase() == 'o') {
+      endOfSequence = true;
+    } else if (valide(userEntry)) {
+      sequence += userEntry;
+    } else
+      print('Entrée invalide. Elle ne sera pas prise en compte');
+  }
+
+  //appel de la fonction saisie sur les entrées
+  print ('Il y a ${saisie(channel, sequence)} % de $sequence dans votre chaine');
 }
