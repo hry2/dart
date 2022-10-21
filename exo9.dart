@@ -12,8 +12,13 @@ débourser.
 double amende (int nombreDePoulesTuees, int nombreDeChienTues, int nombreDeVachesTuees, int nombreDamisTues) {
 
 int totalDesPointsPerdus = nombreDePoulesTuees + nombreDeChienTues*3 + nombreDeVachesTuees*5 + nombreDamisTues*10;
-/*    100  pts       -->  200 euros
-totalDesPointsPerdus --> ? */
+/*    
+100  pts       -->  200 euros
+totalDesPointsPerdus --> ? 
+
+Le permis a 100 points et coute 200€. Ainsi s'il a dépensé 120 points il aura besoin de 2 permis et donc dépensera 400€
+Le calcul fait ici suppose qu'on a un permis avec un nombre de flexible
+*/
 double sommeDue= totalDesPointsPerdus*200/100 ;
   return sommeDue ;
 }
