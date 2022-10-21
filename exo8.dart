@@ -22,17 +22,11 @@ hauteurParcourueParSemaine = nombreDeMarches*hauteurDeChaqueMarche*pow(10, -2)*2
 }
 
 void main () {
-
-print('Entrer le nombre de marches.(Entier positif non nul)');
-int nombreDeMarchesEntres = int.parse(stdin.readLineSync()!);
-//on peut faire un try on format exption pour s'assurer de l'entrée
-print('Entrer la hauteur de chaque marche en cm.(hauteur > 0)');
-double hauteurDuneMarcheEnCm = double.parse(stdin.readLineSync()!);
-//on peut faire un try on format exption pour s'assurer de l'entrée
-hauteurParcourue(nombreDeMarchesEntres, hauteurDuneMarcheEnCm);
-
+ print('Entrer le nombre de marches.(Entier positif non nul)');
+ int nombreDeMarchesEntres = int.parse(stdin.readLineSync()!);
+ //on peut faire un try on format exption pour s'assurer de l'entrée
+ print('Entrer la hauteur de chaque marche en cm.(hauteur > 0)');
+ double hauteurDuneMarcheEnCm = double.parse(stdin.readLineSync()!);
+ //on peut faire un try on format exption pour s'assurer de l'entrée
+ hauteurParcourue(nombreDeMarchesEntres, hauteurDuneMarcheEnCm);
 }
-
-
-
-
